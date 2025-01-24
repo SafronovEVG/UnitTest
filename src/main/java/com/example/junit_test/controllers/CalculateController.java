@@ -1,7 +1,5 @@
 package com.example.junit_test.controllers;
 
-import com.example.junit_test.exception.DivisionByZeroException;
-import com.example.junit_test.exception.NoParametersException;
 import com.example.junit_test.services.api.CalculateService;
 import com.example.junit_test.services.impl.CalculateServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,40 +23,22 @@ public class CalculateController {
 
     @GetMapping("/plus")
     public Integer sum(@RequestParam Integer num1, @RequestParam Integer num2) {
-        try {
             return calculateService.sum(num1, num2);
-        } catch (NoParametersException e) {
-            throw new NoParametersException();
-        }
     }
 
     @GetMapping("/minus")
     public Integer minus(@RequestParam Integer num1, @RequestParam Integer num2) {
-        try {
             return calculateService.minus(num1, num2);
-        } catch (NoParametersException e) {
-            throw new NoParametersException();
-        }
     }
 
     @GetMapping("/multiply")
     public Integer multiply(@RequestParam Integer num1, @RequestParam Integer num2) {
-        try {
             return calculateService.multiply(num1, num2);
-        } catch (NoParametersException e) {
-            throw new NoParametersException();
-        }
     }
 
     @GetMapping("/divide")
     public Double divide(@RequestParam Integer num1, @RequestParam Integer num2) {
-        try {
             return calculateService.divide(num1, num2);
-        } catch (NoParametersException e) {
-            throw new NoParametersException();
-        } catch (DivisionByZeroException e) {
-            throw new DivisionByZeroException();
-        }
     }
 }
 

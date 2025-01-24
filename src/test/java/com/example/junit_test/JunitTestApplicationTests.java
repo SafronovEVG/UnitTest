@@ -8,6 +8,7 @@ class JunitTestApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
